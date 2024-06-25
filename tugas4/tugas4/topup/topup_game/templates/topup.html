@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Up Game</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">NamaToko</a>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Cari Game..."
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Cari
+        </button>
+      </form>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="button">
+        Masuk
+      </button>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="sidebar">
+            <ul class="list-group">
+              <li class="list-group-item">Home</li>
+              <li class="list-group-item">Transaksi</li>
+              <li class="list-group-item">Promo</li>
+            </ul>
+          </div>
+        </div> -->
+
+    <!-- TRANSAKSI  -->
+
+    <!-- <form method="post">
+          {% csrf_token %}
+          <label for="amount">Top Up Amount:</label>
+          <input type="number" id="amount" name="amount" required /><br />
+          <a href="">
+            <button type="submit">Top Up</button>
+          </a>
+        </form> -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mobile Legends Top-Up</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <style>
+                .container {
+                    margin-top: 50px;
+                }
+                .card {
+                    margin: 10px;
+                }
+                .inner-card {
+                    margin: 10px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Mobile Legends Top-Up</h1>
+                <div class="row">
+                    {% for item in top_up%}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                                <p class="card-text"><strong>{{ item.price }}</strong></p>
+                                <div class="card inner-card">
+                                    <div class="card-body">
+                                        <p class="card-text">Bonus: {{ item.bonus }}</p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        </body>
+        </html>
+        
+    <!-- TRANSAKSI SELESAI -->
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>

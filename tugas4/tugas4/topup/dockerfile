@@ -1,0 +1,7 @@
+# Gunakan base image Python 3.12
+FROM python:3.12
+# Set environment variables untuk Python
+ENV PYTHONUNBUFFERED 1                                                                                                                                         
+WORKDIR /topup
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt

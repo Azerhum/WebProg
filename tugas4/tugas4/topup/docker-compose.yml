@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/topup
+    ports:
+      - 8000:8000
+    image: tugas4:django
+    container_name: django_container2
+    command: python manage.py runserver 0.0.0.0:8000

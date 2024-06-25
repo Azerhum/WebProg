@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Up Game</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">RezaTopUp</a>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Cari Game..."
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Cari
+        </button>
+      </form>
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="button">
+        Masuk
+      </button>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <div class="sidebar">
+            <ul class="list-group">
+              <li class="list-group-item">Home</li>
+              <li class="list-group-item">Transaksi</li>
+              <li class="list-group-item">Promo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Lagi Populer</h2>
+            <div>
+              <button class="btn btn-outline-primary btn-sm">
+                Lagi Populer
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                Baru Rilis
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                Entertainment
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                Top Up Langsung
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                Top Up Login
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">Voucher</button>
+              <button class="btn btn-outline-secondary btn-sm">Pulsa</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Repeat this block for each game -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <a href="{% url 'top_up' 'mobile_legends' %}">
+                  <img
+                    src="{% static 'bootstrap/img/mobile_legends.png' %}"
+                    alt="Mobile Legends"
+                    class="card-img-top"
+                  />
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Mobile Legends</h5>
+              </div>
+            </div>
+            <!-- End of game block -->
+
+            <!-- Repeat this block for each game -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <a href="{% url 'top_up' 'genshin_impact' %}">
+                  <img
+                    src="{% static 'bootstrap/img/genshin.png' %}"
+                    alt="genshin_impact"
+                    class="card-img-top"
+                  />
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Genshin Impact</h5>
+              </div>
+            </div>
+            <!-- End of game block -->
+          </div>
+
+          <div class="text-center">
+            <button id="loadMoreGames" class="btn btn-outline-primary">
+              Tampilkan lebih banyak
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </body>
+</html>
