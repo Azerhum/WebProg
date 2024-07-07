@@ -30,7 +30,7 @@ def createStudent(request):
 
 @csrf_protect
 def updateStudent(request, id):
-    student = get_object_or_404(AccountUser, account_user_related_user=id)
+    student = AccountUser.objects.get(account_user_related_user=id)
 
     if request.method == 'POST':
         form = StudentRegisterForm(request.POST)
