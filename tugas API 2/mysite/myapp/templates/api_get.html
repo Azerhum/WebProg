@@ -1,0 +1,40 @@
+{% load static %} {% block content %} {% if messages %}
+<div class="alert alert-success">
+  {% for message in messages %}
+  <strong>{{ message }}</strong>
+  {% endfor %}
+</div>
+{% endif %}
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <!-- Kolom baru untuk alamat -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for obj in data %}
+    <tr>
+      <td>{{ obj.id }}</td>
+      <td>{{ obj.name }}</td>
+      <td>{{ obj.username }}</td>
+      <td>{{ obj.email }}</td>
+      <td>{{ obj.phone }}</td>
+      <td>
+        <!-- Menampilkan alamat lengkap -->
+        {{ obj.address.street }}, {{ obj.address.suite }}, {{ obj.address.city}}, {{ obj.address.zipcode }} (Lat: {{ obj.address.geo.lat }}, Lng: {{obj.address.geo.lng }})
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="6"><h1>Data masih kosong</h1></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

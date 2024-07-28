@@ -1,0 +1,43 @@
+<!-- api_post.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API POST Integration</title>
+</head>
+<body>
+    <h1>API POST Integration</h1>
+    <form method="post" action="{% url 'api_post' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<!-- api_put.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API PUT Integration</title>
+</head>
+<body>
+    <h1>API PUT Integration</h1>
+    <form method="post" action="{% url 'api_put' %}">
+        {% csrf_token %}
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId"><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
